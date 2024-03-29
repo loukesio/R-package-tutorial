@@ -36,7 +36,7 @@ devtools::document() # Update the package documentation
 devtools::check() # Check the package for potential issues
 ```
 
-3. Roxygen Comments
+**3. Roxygen Comments**
 
 Another important aspect that users need to know is the use of roxygen comments, which are different from the comments that R users are typically accustomed to. <br>
 
