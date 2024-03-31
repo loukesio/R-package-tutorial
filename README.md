@@ -16,13 +16,13 @@ Before diving into the package creation process, ensure you have the following p
 
 To begin creating your R package, follow these steps:
 
-1. **Install devtools**: The `devtools` package is a vital tool for package development in R. Install it by running the following command in your R console:
+**1. Install devtools**: The `devtools` package is a vital tool for package development in R. Install it by running the following command in your R console:
 
 ```r
    install.packages("devtools")
 ```
 
-2. **After installation, load the devtools package:**
+**2. After installation, load the devtools package:**
 
 ```
 library(devtools)
@@ -50,7 +50,7 @@ The following is a must-know list of roxygen comments: <br>
 `@importFrom`: Imports specific functions from a package
 `@return`: Describes the return value of a function
 
-
+______________________________________
 ## Let's Start Making the Package
 
 1. `usethis::use_r("my_pkg")` # Creates an R file called 'my_pkg.R' for your package
@@ -70,3 +70,68 @@ The following is a must-know list of roxygen comments: <br>
 
 7. Use `devtools::install()` to install the package from the local source.
    *This creates a binary package that can be loaded and used like any other R package.*
+
+_________________
+
+## Extra info 
+
+### How to Upload an R Package to a GitHub Repository
+
+Uploading your R package to GitHub can help you version control your work, collaborate with others, and share your package with the R community.
+
+**1. Create a GitHub Account**
+If you don't already have a GitHub account, you'll need to create one. Visit [GitHub's website](https://github.com/) and sign up.
+
+**2. Create a New Repository**
+- Once logged in to GitHub, click the "+" icon in the top right corner and select "New repository".
+- Name your repository. It's common practice to name your repository after your R package.
+- Optionally, add a description for your repository.
+- Choose whether the repository will be public or private.
+- Initialize the repository with a README, .gitignore (select R from the dropdown), and a license if you wish.
+- Click "Create repository".
+
+**3. Set Up Git Locally**
+If you haven't already configured Git on your computer, open a terminal or command prompt and set up your user name and email address with the following commands:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+
+**4. Clone the Repository to Your Local Machine**
+Navigate to your newly created GitHub repository.
+Click the "Code" button and copy the repository URL.
+Open a terminal or command prompt, navigate to where you want to store your project, and clone the repository with:
+
+```bash
+git clone <repository-URL> #Replace <repository-URL> with the URL you copied.
+```
+
+**5. Add Your R Package to the Repository**
+Move your R package files into the cloned repository directory on your local machine.
+Open a terminal or command prompt and navigate to your repository directory.
+
+**6. Commit Your R Package to Git**
+
+```bash
+git add .
+git commit -m "Initial commit of my R package"
+git push origin master
+```
+
+## Other key commands to advance your R-package 
+
+```r
+devtools::build_site() # Builds a package website; useful for generating documentation from RMarkdown files and roxygen2 comments.
+
+usethis::use_test_that() # Initializes testing infrastructure using the 'testthat' framework in your R package. It creates tests/testthat directory and adds a dependency on 'testthat'.
+
+usethis::use_test() # Creates a test file in 'tests/testthat' for a specified R function. You'll typically pass the name of the function you're writing tests for.
+
+usethis::use_package() # Adds a specified package to the DESCRIPTION file's Imports or Suggests field, depending on your needs. Useful for declaring package dependencies.
+
+usethis::use_version() # Incorrectly typed as 'use_versioh'. It should be 'use_version()'. This function helps you increment version number of your package in the DESCRIPTION file according to semantic versioning.
+```
+
+
+
