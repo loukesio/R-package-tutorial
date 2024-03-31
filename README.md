@@ -36,19 +36,19 @@ devtools::document() # Update the package documentation
 devtools::check() # Check the package for potential issues
 ```
 
-**3. Roxygen Comments**
+**3. roxygen Comments**
 
 Another important aspect that users need to know is the use of roxygen comments, which are different from the comments that R users are typically accustomed to. <br>
 
 The following is a must-know list of roxygen comments: <br>
 
-`@title`: Provides the title of the package
-`@description`: Describes the package
-`@param`: Documents the function arguments
-`@export`: Exports the function for use in other packages
-`@import`: Imports an entire package for use
-`@importFrom`: Imports specific functions from a package
-`@return`: Describes the return value of a function
+`@title`: Provides the title of the package <br>
+`@description`: Describes the package <br>
+`@param`: Documents the function arguments <br>
+`@export`: Exports the function for use in other packages <br>
+`@import`: Imports an entire package for use <br>
+`@importFrom`: Imports specific functions from a package <br>
+`@return`: Describes the return value of a function <br>
 
 ______________________________________
 ## Let's Start Making the Package
@@ -59,14 +59,14 @@ ______________________________________
 
 3. Add your function or commands that you want to be part of the package in the `my_pkg.R` file. Make sure to document them properly using roxygen comments.
 
-4. Use `devtools::check()` to check your package for potential issues or errors.
+4.  Use `devtools::document()` to update the package documentation based on the roxygen comments.
+   *This command generates the help files and other documentation for your package. It's a good idea to run this after making changes to your code or documentation.*
+
+5. Use `devtools::check()` to check your package for potential issues or errors.
    *This command will run a series of checks and provide feedback.*
 
-5. Use `devtools::load_all()` to load the package code into your R session.
+6. Use `devtools::load_all()` to load the package code into your R session.
    *This allows you to test your functions and make sure they work as expected.*
-
-6. Use `devtools::document()` to update the package documentation based on the roxygen comments.
-   *This command generates the help files and other documentation for your package. It's a good idea to run this after making changes to your code or documentation.*
 
 7. Use `devtools::install()` to install the package from the local source.
    *This creates a binary package that can be loaded and used like any other R package.*
